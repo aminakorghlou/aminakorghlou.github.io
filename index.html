@@ -13,6 +13,37 @@
       margin: 0;
       padding: 0;
     }
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+      background-color: #333;
+      border-bottom: 2px solid #00d1b2; /* Bordure verte fluo */
+    }
+
+    /* Style pour l'image */
+    .header img {
+      width: 80px; /* Taille de la photo */
+      height: 80px;
+      border-radius: 50%;
+      margin-right: 20px; /* Espacement entre la photo et le texte */
+    }
+
+    /* Style pour le texte (nom et statut) */
+    .header-text {
+      font-size: 1.5em;
+      color: #00d1b2; /* Texte en vert fluo */
+    }
+
+    .header-text h1 {
+      margin: 0;
+    }
+
+    .header-text p {
+      font-size: 1.1em;
+      margin-top: 5px;
+    }
     
     /* Style CSS pour l'affichage des informations sur une ligne */
     .info-line {
@@ -109,11 +140,18 @@
 
     <!-- Section d'introduction -->
     <div class="intro">
+      <div class="header">
+        <img src="amina.jpg" alt="Photo de Amina"> <!-- Remplace "ton-image.jpg" par ton image -->
+        <div class="header-text">
+          <h1>Amina Korghlou</h1>
+          <p>Étudiante en L2 à l'Université Grenoble Alpes - Info & MIAGE</p>
+        </div>
+      </div>
       <h1>Amina Korghlou</h1>
       <h2>Étudiante en L2 à l'Université Grenoble Alpes - Info & MIAGE</h2>
       <div class="info-line">
-        <span class="info-item">📱 <strong>+33 6 12 34 56 78</strong></span>
-        <span class="info-item">🎂 <strong>25 ans</strong></span>
+        <span class="info-item">📱 <strong>+33 6 78 49 39 31</strong></span>
+        <span class="info-item">🎂 <strong>20/02/2004 (20 ans)</strong></span>
         <span class="info-item">🏠 <strong>Grenoble, France</strong></span>
         <span class="info-item">🚗 Permis B</span>
       </div>
