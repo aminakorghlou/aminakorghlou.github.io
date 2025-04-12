@@ -19,14 +19,13 @@
       justify-content: flex-start;
       padding: 20px;
       background-color: #333;
-      border-bottom: 2px solid #00d1b2; /* Bordure verte fluo */
     }
 
     /* Style pour l'image */
     .header img {
-      width: 80px; /* Taille de la photo */
-      height: 80px;
-      border-radius: 50%;
+      width: 200px; /* Taille de la photo */
+      height: 200px;
+      border-radius: 20%;
       margin-right: 20px; /* Espacement entre la photo et le texte */
     }
 
@@ -41,7 +40,7 @@
     }
 
     .header-text p {
-      font-size: 1.1em;
+      font-size: 32px;
       margin-top: 5px;
     }
     
@@ -52,8 +51,7 @@
       align-items: center;
       background-color: #333;
       padding: 10px;
-      border-radius: 8px;
-      color: #fff;
+      color: #ffffffa8;
     }
 
     .info-item {
@@ -67,8 +65,8 @@
   
 
     h1, h2 {
-      text-align: center;
-      color: #00d1b2; /* Couleur verte fluo pour ressembler à du code */
+      text-align: left;
+      color: #04b99e; /* Couleur verte fluo pour ressembler à du code */
     }
 
     .container {
@@ -87,13 +85,19 @@
     }
 
     .intro h2 {
-      font-size: 1.8em;
+      font-size: x-large;
     }
 
     .intro p {
-      font-size: 1.2em;
+      font-size: large;
       line-height: 1.5;
     }
+
+    #phrase {
+      color: #f4f4f483;
+      font-family:'Times New Roman';
+    }
+    
 
     /* Section des projets */
     .projects {
@@ -112,9 +116,17 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
       transition: background-color 0.3s ease, transform 0.3s ease;
     }
+    .projects h3 {
+      color: rgba(231, 114, 212, 0.849);
+    }
+    .projects p {
+      color: rgba(172, 134, 165, 0.849);
+      
+
+    }
 
     .project:hover {
-      background-color: #00d1b2; /* Survol avec une couleur vive */
+      background-color: #5f5a5e; /* Survol avec une couleur vive */
       transform: scale(1.05); /* Effet de zoom au survol */
       cursor: pointer;
     }
@@ -131,6 +143,68 @@
       .projects {
         grid-template-columns: 1fr;
       }
+    /* Adaptation des tailles pour des écrans plus petits */
+@media (max-width: 1024px) {
+  .header img {
+    width: 150px; /* Réduire la taille de l'image sur les tablettes et petits écrans */
+    height: 150px;
+  }
+
+  .header-text h1 {
+    font-size: 1.2em; /* Réduire la taille du texte */
+  }
+
+  .header-text p {
+    font-size: 18px; /* Réduire la taille du texte */
+  }
+}
+
+/* Pour les petits écrans, en plus de la grille des projets, on peut adapter les boîtes de projet */
+@media (max-width: 768px) {
+  .projects {
+    grid-template-columns: 1fr; /* Passer à une colonne pour les petits écrans */
+    padding: 0;
+  }
+
+  .project {
+    padding: 20px; /* Réduire la taille des boîtes de projet */
+    margin: 10px 0; /* Ajouter un petit espacement entre les projets */
+  }
+
+  .info-line {
+    flex-direction: column; /* Empiler les informations sur mobile */
+    align-items: flex-start;
+  }
+
+  .info-item {
+    font-size: 1.1em; /* Réduire la taille des informations pour s'adapter */
+    margin-bottom: 8px; /* Ajouter un peu d'espace entre les informations */
+  }
+}
+
+/* Sur mobile, on réduit encore plus la taille du texte */
+@media (max-width: 480px) {
+  .header-text h1 {
+    font-size: 1.1em; /* Texte encore plus petit */
+  }
+
+  .header-text p {
+    font-size: 14px; /* Plus petit sur mobile */
+  }
+
+  .intro p {
+    font-size: 14px; /* Ajuster la taille du texte */
+  }
+
+  .project h3 {
+    font-size: 1.2em; /* Réduire la taille du titre du projet */
+  }
+
+  .project p {
+    font-size: 1em; /* Réduire la taille de la description du projet */
+  }
+}
+
     }
   </style>
 </head>
@@ -141,14 +215,14 @@
     <!-- Section d'introduction -->
     <div class="intro">
       <div class="header">
-        <img src="amina.jpg" alt="Photo de Amina"> <!-- Remplace "ton-image.jpg" par ton image -->
+        <img src="amina.jpg" alt="Photo de Amina"> 
         <div class="header-text">
           <h1>Amina Korghlou</h1>
           <p>Étudiante en L2 à l'Université Grenoble Alpes - Info & MIAGE</p>
+          <p id="phrase">"Je recherche une alternance à partir de septembre 2025 afin d’intégrer l’INP-ESISAR. Curieuse, rigoureuse et autonome, je souhaite mettre mes compétences en programmation, algorithmique et bases de données au service d’une entreprise innovante."</p>
+
         </div>
       </div>
-      <h1>Amina Korghlou</h1>
-      <h2>Étudiante en L2 à l'Université Grenoble Alpes - Info & MIAGE</h2>
       <div class="info-line">
         <span class="info-item">📱 <strong>+33 6 78 49 39 31</strong></span>
         <span class="info-item">🎂 <strong>20/02/2004 (20 ans)</strong></span>
@@ -156,7 +230,6 @@
         <span class="info-item">🚗 Permis B</span>
       </div>
       
-      <p>Je recherche une alternance à partir de septembre 2025 afin d’intégrer l’INP-ESISAR. Curieuse, rigoureuse et autonome, je souhaite mettre mes compétences en programmation, algorithmique et bases de données au service d’une entreprise innovante.</p>
     </div>
 
     <!-- Section des projets -->
@@ -165,8 +238,8 @@
       <!-- Projet 1 -->
       <div class="project">
         <a href="https://lien-vers-ton-projet1.com" target="_blank">
-          <h3>Projet 1</h3>
-          <p>Description du projet 1.</p>
+          <h3 >Jeu Tents</h3>
+          <p>Projet de logique implémenté en python</p>
         </a>
       </div>
       
