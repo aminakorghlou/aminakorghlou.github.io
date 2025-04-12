@@ -15,6 +15,7 @@
     }
     .header {
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       padding: 20px;
@@ -26,13 +27,14 @@
       width: 200px; /* Taille de la photo */
       height: 200px;
       border-radius: 20%;
-      margin-right: 20px; /* Espacement entre la photo et le texte */
+      margin-bottom: 20px; /* Espacement entre la photo et le texte */
     }
 
     /* Style pour le texte (nom et statut) */
     .header-text {
       font-size: 1.5em;
       color: #00d1b2; /* Texte en vert fluo */
+      text-align: center;
     }
 
     .header-text h1 {
@@ -43,29 +45,28 @@
       font-size: 32px;
       margin-top: 5px;
     }
-    
+
     /* Style CSS pour l'affichage des informations sur une ligne */
     .info-line {
       display: flex;
-      justify-content: space-around; /* Espacement entre les éléments */
-      align-items: center;
+      flex-direction: column;
+      align-items: center; /* Centrer les éléments */
       background-color: #333;
       padding: 10px;
       color: #ffffffa8;
     }
 
     .info-item {
-      margin: 0 10px;
+      margin: 10px 0;
       font-size: 1.2em;
     }
 
     strong {
       font-weight: bold;
     }
-  
 
     h1, h2 {
-      text-align: left;
+      text-align: center;
       color: #04b99e; /* Couleur verte fluo pour ressembler à du code */
     }
 
@@ -97,7 +98,6 @@
       color: #f4f4f483;
       font-family:'Times New Roman';
     }
-    
 
     /* Section des projets */
     .projects {
@@ -121,8 +121,6 @@
     }
     .projects p {
       color: rgba(172, 134, 165, 0.849);
-      
-
     }
 
     .project:hover {
@@ -143,68 +141,68 @@
       .projects {
         grid-template-columns: 1fr;
       }
+    }
+
     /* Adaptation des tailles pour des écrans plus petits */
-@media (max-width: 1024px) {
-  .header img {
-    width: 150px; /* Réduire la taille de l'image sur les tablettes et petits écrans */
-    height: 150px;
-  }
+    @media (max-width: 1024px) {
+      .header img {
+        width: 150px; /* Réduire la taille de l'image sur les tablettes et petits écrans */
+        height: 150px;
+      }
 
-  .header-text h1 {
-    font-size: 1.2em; /* Réduire la taille du texte */
-  }
+      .header-text h1 {
+        font-size: 1.2em; /* Réduire la taille du texte */
+      }
 
-  .header-text p {
-    font-size: 18px; /* Réduire la taille du texte */
-  }
-}
+      .header-text p {
+        font-size: 18px; /* Réduire la taille du texte */
+      }
+    }
 
-/* Pour les petits écrans, en plus de la grille des projets, on peut adapter les boîtes de projet */
-@media (max-width: 768px) {
-  .projects {
-    grid-template-columns: 1fr; /* Passer à une colonne pour les petits écrans */
-    padding: 0;
-  }
+    /* Pour les petits écrans, en plus de la grille des projets, on peut adapter les boîtes de projet */
+    @media (max-width: 768px) {
+      .projects {
+        grid-template-columns: 1fr; /* Passer à une colonne pour les petits écrans */
+        padding: 0;
+      }
 
-  .project {
-    padding: 20px; /* Réduire la taille des boîtes de projet */
-    margin: 10px 0; /* Ajouter un petit espacement entre les projets */
-  }
+      .project {
+        padding: 20px; /* Réduire la taille des boîtes de projet */
+        margin: 10px 0; /* Ajouter un petit espacement entre les projets */
+      }
 
-  .info-line {
-    flex-direction: column; /* Empiler les informations sur mobile */
-    align-items: flex-start;
-  }
+      .info-line {
+        flex-direction: column; /* Empiler les informations sur mobile */
+        align-items: flex-start;
+      }
 
-  .info-item {
-    font-size: 1.1em; /* Réduire la taille des informations pour s'adapter */
-    margin-bottom: 8px; /* Ajouter un peu d'espace entre les informations */
-  }
-}
+      .info-item {
+        font-size: 1.1em; /* Réduire la taille des informations pour s'adapter */
+        margin-bottom: 8px; /* Ajouter un peu d'espace entre les informations */
+      }
+    }
 
-/* Sur mobile, on réduit encore plus la taille du texte */
-@media (max-width: 480px) {
-  .header-text h1 {
-    font-size: 1.1em; /* Texte encore plus petit */
-  }
+    /* Sur mobile, on réduit encore plus la taille du texte */
+    @media (max-width: 480px) {
+      .header-text h1 {
+        font-size: 1.1em; /* Texte encore plus petit */
+      }
 
-  .header-text p {
-    font-size: 14px; /* Plus petit sur mobile */
-  }
+      .header-text p {
+        font-size: 14px; /* Plus petit sur mobile */
+      }
 
-  .intro p {
-    font-size: 14px; /* Ajuster la taille du texte */
-  }
+      .intro p {
+        font-size: 14px; /* Ajuster la taille du texte */
+      }
 
-  .project h3 {
-    font-size: 1.2em; /* Réduire la taille du titre du projet */
-  }
+      .project h3 {
+        font-size: 1.2em; /* Réduire la taille du titre du projet */
+      }
 
-  .project p {
-    font-size: 1em; /* Réduire la taille de la description du projet */
-  }
-}
-
+      .project p {
+        font-size: 1em; /* Réduire la taille de la description du projet */
+      }
     }
   </style>
 </head>
@@ -215,12 +213,11 @@
     <!-- Section d'introduction -->
     <div class="intro">
       <div class="header">
-        <img src="amina.jpg" alt="Photo de Amina"> 
+        <img src="amina.jpg" alt="Photo de Amina">
         <div class="header-text">
           <h1>Amina Korghlou</h1>
           <p>Étudiante en L2 à l'Université Grenoble Alpes - Info & MIAGE</p>
           <p id="phrase">"Je recherche une alternance à partir de septembre 2025 afin d’intégrer l’INP-ESISAR. Curieuse, rigoureuse et autonome, je souhaite mettre mes compétences en programmation, algorithmique et bases de données au service d’une entreprise innovante."</p>
-
         </div>
       </div>
       <div class="info-line">
@@ -229,7 +226,6 @@
         <span class="info-item">🏠 <strong>Grenoble, France</strong></span>
         <span class="info-item">🚗 Permis B</span>
       </div>
-      
     </div>
 
     <!-- Section des projets -->
@@ -238,11 +234,11 @@
       <!-- Projet 1 -->
       <div class="project">
         <a href="https://lien-vers-ton-projet1.com" target="_blank">
-          <h3 >Jeu Tents</h3>
+          <h3>Jeu Tents</h3>
           <p>Projet de logique implémenté en python</p>
         </a>
       </div>
-      
+
       <!-- Projet 2 -->
       <div class="project">
         <a href="https://lien-vers-ton-projet2.com" target="_blank">
@@ -283,7 +279,7 @@
         </a>
       </div>
     </div>
-    
+
   </div>
 
 </body>
