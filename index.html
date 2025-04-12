@@ -15,7 +15,6 @@
     }
     .header {
       display: flex;
-      flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       padding: 20px;
@@ -27,14 +26,13 @@
       width: 200px; /* Taille de la photo */
       height: 200px;
       border-radius: 20%;
-      margin-bottom: 20px; /* Espacement entre la photo et le texte */
+      margin-right: 20px; /* Espacement entre la photo et le texte */
     }
 
     /* Style pour le texte (nom et statut) */
     .header-text {
       font-size: 1.5em;
       color: #00d1b2; /* Texte en vert fluo */
-      text-align: center;
     }
 
     .header-text h1 {
@@ -49,15 +47,15 @@
     /* Style CSS pour l'affichage des informations sur une ligne */
     .info-line {
       display: flex;
-      flex-direction: column;
-      align-items: center; /* Centrer les éléments */
+      justify-content: space-around; /* Espacement entre les éléments */
+      align-items: center;
       background-color: #333;
       padding: 10px;
       color: #ffffffa8;
     }
 
     .info-item {
-      margin: 10px 0;
+      margin: 0 10px;
       font-size: 1.2em;
     }
 
@@ -66,7 +64,7 @@
     }
 
     h1, h2 {
-      text-align: center;
+      text-align: left;
       color: #04b99e; /* Couleur verte fluo pour ressembler à du code */
     }
 
@@ -138,6 +136,29 @@
 
     /* Pour les petits écrans, on passe en 1 seule colonne */
     @media (max-width: 768px) {
+      .header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .header img {
+        margin-right: 0;
+        margin-bottom: 20px; /* Espacement entre la photo et le texte */
+      }
+
+      .header-text {
+        text-align: center;
+      }
+
+      .info-line {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .info-item {
+        margin: 10px 0;
+      }
+
       .projects {
         grid-template-columns: 1fr;
       }
